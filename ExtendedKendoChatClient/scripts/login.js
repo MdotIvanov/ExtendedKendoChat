@@ -1,15 +1,15 @@
-(function (global) {
-    var app = global.app = global.app || {};
 
-    window.loginService = kendo.observable({
-        isLoggedIn: false,
-        username: "",
-        password: "",
+    var app  = app || {};
+    app.viewmodels = app.viewmodels || {};
+(function (scope) {
 
-        onLogin: function () {
+    scope.loginService = kendo.observable({
+        username: '',
+        pasword: '',
+        onLogin : function () {
             var that = this,
-                username = that.get("username").trim(),
-                password = that.get("password").trim();
+                username = that.get('username'),
+                password = that.get('password');
             console.log(username);
 
             if (username === "" || password === "") {
@@ -28,13 +28,12 @@
                         console.log(error);
                     });
 
-            that.set("isLoggedIn", true);
         },
 
-        onRegister: function () {
+        onRegister : function () {
             var that = this,
-                username = that.get("username").trim(),
-                password = that.get("password").trim();
+                username = that.get('username'),
+                password = that.get('password');
 
             if (username === "" || password === "") {
                 navigator.notification.alert("Both fields are required!",
@@ -54,29 +53,8 @@
                     navigator.notification.alert(JSON.stringify(error), function () {}, "Registration failed", 'OK');
                     console.log(error);
                 });
-            that.set("isLoggedIn", true);
         },
-        onLogout: function () {
-            var that = this;
-
-            that.clearForm();
-            that.set("isLoggedIn", false);
-        },
-
-        clearForm: function () {
-            var that = this;
-
-            that.set("username", "");
-            that.set("password", "");
-        },
-
-        checkEnter: function (e) {
-            var that = this;
-
-            if (e.keyCode == 13) {
-                $(e.target).blur();
-                that.onLogin();
-            }
-        }
+        
     });
-})(window);
+    
+}(app.viewmodels));
