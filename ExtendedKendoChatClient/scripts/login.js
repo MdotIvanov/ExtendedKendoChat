@@ -1,12 +1,12 @@
+var app = app || {};
+app.viewmodels = app.viewmodels || {};
 
-    var app  = app || {};
-    app.viewmodels = app.viewmodels || {};
 (function (scope) {
 
     scope.loginService = kendo.observable({
         username: '',
-        pasword: '',
-        onLogin : function () {
+        password: '',
+        onLogin: function () {
             var that = this,
                 username = that.get('username'),
                 password = that.get('password');
@@ -20,17 +20,18 @@
             }
             window.everlive.Users.login(username, password)
                 .then(function (data) { // success callback
-                        navigator.notification.alert(JSON.stringify(data), function () {}, "Logged", 'OK');
+                        //navigator.notification.alert(JSON.stringify(data), function () {}, "Logged", 'OK');
                         console.log(data);
+                        navigator.navigate('#find');
                     },
                     function (error) { // error callback
-                        navigator.notification.alert(JSON.stringify(error), function () {}, "Login failed", 'OK');
+                        //navigator.notification.alert(JSON.stringify(error), function () {}, "Login failed", 'OK');
                         console.log(error);
                     });
 
         },
 
-        onRegister : function () {
+        onRegister: function () {
             var that = this,
                 username = that.get('username'),
                 password = that.get('password');
@@ -46,15 +47,16 @@
                     DispayName: username,
                 },
                 function (data) {
-                    navigator.notification.alert(JSON.stringify(data), function () {}, "Registered", 'OK');
+                    //navigator.notification.alert(JSON.stringify(data), function () {}, "Registered", 'OK');
                     console.log(data);
+                    navigator.navigate('#find');
                 },
                 function (error) {
                     navigator.notification.alert(JSON.stringify(error), function () {}, "Registration failed", 'OK');
                     console.log(error);
                 });
         },
-        
+
     });
-    
+
 }(app.viewmodels));
