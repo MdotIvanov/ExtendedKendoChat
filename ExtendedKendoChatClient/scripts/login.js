@@ -4,13 +4,13 @@ app.viewmodels = app.viewmodels || {};
 (function (scope) {
 
     scope.loginService = kendo.observable({
-        username: '',
-        password: '',
+        username: 'username',
+        password: 'password',
         onLogin: function () {
             var that = this,
                 username = that.get('username'),
                 password = that.get('password');
-            console.log(username);
+            alert(username);
 
             if (username === "" || password === "") {
                 navigator.notification.alert("Both fields are required!",
@@ -18,6 +18,7 @@ app.viewmodels = app.viewmodels || {};
 
                 return;
             }
+            
             window.everlive.Users.login(username, password)
                 .then(function (data) { // success callback
                         //navigator.notification.alert(JSON.stringify(data), function () {}, "Logged", 'OK');
@@ -58,5 +59,5 @@ app.viewmodels = app.viewmodels || {};
         },
 
     });
-
-}(app.viewmodels));
+    //kendo.bind('login-view',scope.loginService);
+}(app.viewmodels));//app.viewmodels
