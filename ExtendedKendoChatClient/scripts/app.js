@@ -1,7 +1,7 @@
-(function () {
-    var app = app || {};
 
+(function (scope) {
 
+var app = scope.app = app || {};
     document.addEventListener('deviceready', function () {
 
         navigator.splashscreen.hide();
@@ -13,8 +13,8 @@
         });
 
         window.everlive = new Everlive("vl0divDi3u14z9Cq");
-        
+
     }, false);
 
 
-}());
+}(window));
