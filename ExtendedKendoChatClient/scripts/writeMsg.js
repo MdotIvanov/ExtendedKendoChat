@@ -4,8 +4,9 @@ app.viewmodels = app.viewmodels || {};
 (function (scope) {
 
     scope.WriteMsg = kendo.observable({
-        text: 'write message here...'
-        
+        clicked: function() {
+            alert('aaasdaa');
+        }
     });
     //kendo.bind('login-view',scope.loginService);
 }(app.viewmodels));//app.viewmodels

@@ -6,6 +6,6 @@
     <lable for="tb-password">password</lable>
     <input type='password' data-bind="value: password" id ="tb-password" />
     <br/>
-    <button class="button" data-role='button' type='submit' data-bild="click : onLogin">Login</button>
-    <button class="button" data-role='button' type='submit' data-bild="click : onRegister">Register</button>
+    <button class="button" data-role='button' type='submit' data-bind="events: {click: onLogin}">Login</button>
+    <button class="button" data-role='button' type='submit' data-bind="events: {click: onRegister}">Register</button>
 </div>
