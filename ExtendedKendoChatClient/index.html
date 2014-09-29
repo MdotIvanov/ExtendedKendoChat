@@ -28,10 +28,20 @@
             <div data-role="tabstrip">
                 <a href="views/login.html" data-icon="home">Login</a>   
                 <a href="views/find.html" data-icon="search">Find Friends</a>
+                <a href="views/writeMsg.html" data-icon="compose">Write</a>
             </div>
         </div>
     </div>
-
+    
+    <script id="friend-item-template" 
+          type="text/x-kendo-template">
+        <li>
+          <strong>
+            #: username #
+          </strong>
+        </li>
+  </script>
+    
     <script src="scripts/app.js"></script>
     <script src="scripts/login.js"></script>
 </body>

@@ -1,3 +1,12 @@
 <div data-role="view" data-title="Find" data-layout="main" data-model="app.viewmodels.find">
-    <span data-bind="text: somevalue"></span>
+    <input type='text' id='tb-search' />
+    <button class='btn' data-role='button' data-bind='click: onSearch' >
+        Search
+    </button>
+    <br/>
+    <ul data-role="listview"
+		data-bind="source: friends"
+		data-template="#friend-item-template">
+        
+    </ul>
 </div>
