@@ -1,7 +1,7 @@
 <div data-role="view" data-title="Write Message" data-layout="main" data-model="app.viewmodels.writeMsg">
     <div class="box-col">
         <h4>Enter some content</h4>
-        <textarea data-role="editor" data-tools="['bold',
+        <!--<textarea data-role="editor" data-tools="['bold',
                                    'italic',
                                    'underline',
                                    'justifyLeft',
@@ -12,9 +12,9 @@
                                    'foreColor',
                                    'backColor',
                                    'createTable']" 
-                  data-bind="value: text" style="width: 90%; height: 40%;"></textarea>
-        <button data-role="button" data-bild="events:{click: clicked}">
-            Click
-        </button>
+                  data-bind="value: text" style="width: 90%; height: 40%;"></textarea>-->
+        <ul data-role="listview" data-bind="source: source, events { click: onClick }"></ul>
+        <input type="text" data-bind="value: message" id ="tb-message" />
+        <button class="login-button" data-role="button" type="submit" data-bind="events: {click: clicked}">Add</button>
     </div>
 </div>

@@ -8,7 +8,7 @@ app.viewmodels = app.viewmodels || {};
             var that = this,
                 username = that.get('username'),
                 password = that.get('password');
-
+            
             if (!username || !password) {
                 navigator.notification.alert('Incorrect username or password!',
                     function () {}, "Login failed", 'OK');
@@ -17,13 +17,12 @@ app.viewmodels = app.viewmodels || {};
             }
 
             window.everlive.Users.login(username, password)
-                .then(function (data) { // success callback
-                        //navigator.notification.alert(JSON.stringify(data), function () {}, "Logged", 'OK');
-                        console.log(data);
+                .then(function (data) {
+                        console.log(data.result['access_token']);
+                        navigator.notification.vibrate(1000);
                         navigator.navigate('#find');
                     },
-                    function (error) { // error callback
-                        //navigator.notification.alert(JSON.stringify(error), function () {}, "Login failed", 'OK');
+                    function (error) {
                         console.log(error);
                     });
 
@@ -41,11 +40,10 @@ app.viewmodels = app.viewmodels || {};
                 return;
             }
 
-            window.everlive.Users.register(username, password, { // additional fields
+            window.everlive.Users.register(username, password, {
                     DispayName: username,
                 },
                 function (data) {
-                    //navigator.notification.alert(JSON.stringify(data), function () {}, "Registered", 'OK');
                     console.log(data);
                     navigator.navigate('#find');
                 },
@@ -56,5 +54,4 @@ app.viewmodels = app.viewmodels || {};
         }
 
     });
-    //kendo.bind('login-view',scope.loginService);
-}(app.viewmodels)); //app.viewmodels
+}(app.viewmodels));

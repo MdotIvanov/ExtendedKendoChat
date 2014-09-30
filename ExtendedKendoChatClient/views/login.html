@@ -1,11 +1,11 @@
-<div data-role="view" data-id="login-view" data-title="Login" data-layout="main" data-model="app.viewmodels.loginService">
+<div class="buttonArea" data-role="view" data-id="login-view" data-title="Login" data-layout="main" data-model="app.viewmodels.loginService">
   <h1>Login to Chat</h1>
-    <lable for="tb-username">username</lable>
+    <lable for="tb-username">Username:</lable>
     <input type='text' data-bind="value: username" id ="tb-username" />
     <br/>
-    <lable for="tb-password">password</lable>
+    <lable for="tb-password">Password:</lable>
     <input type='password' data-bind="value: password" id ="tb-password" />
     <br/>
-    <button class="button" data-role='button' type='submit' data-bind="events: {click: onLogin}">Login</button>
-    <button class="button" data-role='button' type='submit' data-bind="events: {click: onRegister}">Register</button>
+    <button class="login-button" data-role='button' type='submit' data-bind="events: {click: onLogin}">Login</button>
+    <button class="login-button" data-role='button' type='submit' data-bind="events: {click: onRegister}">Register</button>
 </div>
