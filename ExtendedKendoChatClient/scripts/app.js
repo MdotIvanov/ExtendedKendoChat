@@ -13,6 +13,9 @@ var app = scope.app = app || {};
         });
 
         window.everlive = new Everlive("vl0divDi3u14z9Cq");
+        
+	    var connectionInfo = new ConnectionApp();
+	    connectionInfo.run();
 
     }, false);
 
