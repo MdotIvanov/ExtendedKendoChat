@@ -14,7 +14,7 @@
                                    'createTable']" 
                   data-bind="value: text" style="width: 90%; height: 40%;"></textarea>-->
         <ul data-role="listview" data-bind="source: source, events { click: onClick }"></ul>
-        <input type="text" data-bind="value: message" id ="tb-message" />
-        <button class="login-button" data-role="button" type="submit" data-bind="events: {click: clicked}">Add</button>
+        <input type="text" data-bind="value: message" id ="tb-message"/>
+        <a data-role="detailbutton" data-style="contactadd" data-bind="events: {click: add}"></a>
     </div>
 </div>

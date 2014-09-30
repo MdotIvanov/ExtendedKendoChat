@@ -7,12 +7,11 @@ app.viewmodels = app.viewmodels || {};
         source: [ "foo", "bar" ],
         newItemValue: "",
         add: function(e) {
-            var val = this.get("newItemValue");
+            var val = this.get("message");
             if (val) {
                 this.source.push(val);
             }
-
-            $("#listview-new-item").blur();
+            
             e.preventDefault();
         },
 

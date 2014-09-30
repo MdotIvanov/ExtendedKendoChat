@@ -4,6 +4,7 @@ app.viewmodels = app.viewmodels || {};
 (function (scope) {
     'use strict';
     scope.loginService = kendo.observable({
+        connection: 'ddas',
         onLogin: function () {
             var that = this,
                 username = that.get('username'),
